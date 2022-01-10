@@ -35,14 +35,16 @@ const App = () => {
       write: false,
       plugins: [unpkgPathPlugin()],
       define: {
-        'process.env.NODE_ENV': '"production"', 
-        global: 'window'
-      }
+        'process.env.NODE_ENV': '"production"',
+        global: 'window',
+      },
     }); //This does bundling.
     console.log(result);
 
     setCode(result.outputFiles[0].text);
-  };
+
+    // setCode(result.code); Uncomment when transpiling to see transpiled results.
+  };;
 
   return (
     <div>
