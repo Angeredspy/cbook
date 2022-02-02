@@ -1,5 +1,10 @@
 import * as esbuild from 'esbuild-wasm';
-import axios from 'axios';
+import axios from 'axios'; 
+import localForage from 'localforage'; 
+
+const fileCache = localForage.createInstance({
+  
+})
 
 export const unpkgPathPlugin = () => {
   return {
@@ -31,8 +36,8 @@ export const unpkgPathPlugin = () => {
           return {
             loader: 'jsx',
             contents: `
-              import React from 'react';    
-              console.log(React);
+              import React, { useState } from 'react-select';    
+              console.log(React, useState);
             `,
           };
         } 
